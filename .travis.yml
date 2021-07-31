@@ -7,7 +7,7 @@ before_install:
 
 script:
   - docker run -e CI=true pdtg/react-test npm test
-  - docker image rm pdtg/react-test
+  - docker image rm -f pdtg/react-test
 
 after_success:
   - docker build -t pdtg/complex-client ./client
